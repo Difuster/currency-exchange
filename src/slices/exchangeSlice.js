@@ -13,7 +13,7 @@ const initialState = {
     to: 'RUB',
   },
   date: getDate(),
-  result: 0,
+  result: '',
   success: false,
   popularSymbols: [
     {

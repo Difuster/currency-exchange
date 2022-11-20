@@ -1,11 +1,11 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 import { actions as exchangeActions } from '../slices/exchangeSlice.js';
 import {
   selectAmount, selectFromCurrency, selectToCurrency, selectDate, selectResult, selectSuccess,  selectPopularSymbols,
 } from '..//slices/exchangeSlice.js';
 import { actions as modalActions } from '../slices/modalSlice.js';
-import { selectModalType } from '..//slices/modalSlice.js';
 import Modal from './Modal';
 import '../App.css';
 import './MainPage.css';
@@ -14,6 +14,7 @@ import rightArrow from '../assets/rigthArrow.png';
 function MainPage() {
   const [inputValue, setInputValue] = useState('');
   const [err, setErr] = useState('');
+  const { t } = useTranslation('translation', { keyPrefix: 'mainPage' });
 
   const state = {
     amount: useSelector(selectAmount),
@@ -96,8 +97,8 @@ function MainPage() {
         <div className="Main-forms">
           <div className="Main-formWrapper">
             <form onSubmit={handleExchange}>
-              <label>
-                У меня есть:<br /><br />
+              <label style={{fontSize: "24px"}}>
+                {t('thereIs')}<br /><br />
                 <input
                   type="text"
                   className="Main-input"
@@ -137,8 +138,14 @@ function MainPage() {
           <div className="Main-formWrapper">
             <form onSubmit={handleExchange}>
               <div>
-                <label>Хочу обменять на:<br /><br /></label>
-                <div className="Main-output"><p ref={outputRef}>{Math.round(state.result, 2)}</p></div>
+                <label style={{fontSize: "24px"}}>
+                  Хочу обменять на:<br /><br />
+                </label>
+                <div className="Main-output">
+                  <p ref={outputRef}>
+                    {state.result > 0 ? Math.round(state.result, 2) : ' '}
+                  </p>
+                </div>
               </div>
               <div style={{display: 'flex', flexWrap: 'no-wrap'}}>
                 <p className="Main-checkedCurrency">{state.currency.to}</p>
