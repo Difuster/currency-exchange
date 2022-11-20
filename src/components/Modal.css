@@ -1,0 +1,103 @@
+.Modal {
+  width: 30%;
+  height: 70%;
+  top: 15%;
+  left: 35%;
+  position: absolute;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 3px solid black;
+  border-radius: 5px;
+  padding: 20px;
+  overflow-y: scroll;
+}
+
+.Modal-header {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 10px;
+  text-transform: uppercase;
+  color: white;
+  border-bottom: 1px solid rgb(255, 255, 255);
+}
+
+.Modal-header button {
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  padding: 4px 8px;
+}
+
+.Modal-header button:hover {
+  cursor: pointer;
+}
+
+.Modal ul {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  list-style-type: none;
+}
+
+.Modal ul>li {
+  padding: 3px;
+  margin: 3px;
+  color: white;
+  width: 70%;
+}
+
+.Modal ul>li:hover {
+  cursor: pointer;
+}
+
+@media (min-width: 1200px) and (max-width: 1359px) {
+  .Modal {
+    width: 30%;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px)  {
+  .Modal {
+    width: 50%;
+    left: 25%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px)  {
+  .Modal {
+    width: 70%;
+    left: 15%;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px)  {
+  .Modal {
+    width: 80%;
+    left: 10%;
+  }
+}
+
+@media (min-width: 420px) and (max-width: 575px) {
+  .Modal {
+    width: 90%;
+    left: 5%;
+  }
+}
+
+@media (max-width: 419px) {
+  .Modal {
+    width: 90%;
+    left: 5%;
+  }
+
+  .Modal ul {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-inline-start: 0;
+  }
+}
