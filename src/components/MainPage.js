@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { actions as exchangeActions } from '../slices/exchangeSlice.js';
 import {
   selectAmount, selectFromCurrency, selectToCurrency, selectDate, selectResult, selectSuccess,  selectPopularSymbols,
-} from '..//slices/exchangeSlice.js';
+} from '../slices/exchangeSlice.js';
 import { actions as modalActions } from '../slices/modalSlice.js';
 import Modal from './Modal';
 import '../App.css';
@@ -139,7 +139,7 @@ function MainPage() {
             <form onSubmit={handleExchange}>
               <div>
                 <label style={{fontSize: "24px"}}>
-                  Хочу обменять на:<br /><br />
+                  {t('changeTo')}<br /><br />
                 </label>
                 <div className="Main-output">
                   <p ref={outputRef}>
