@@ -1,3 +1,7 @@
 import ru from './ru.js';
 
-export default { ru };
+const lngs = {
+  ru,
+}
+
+export default lngs;

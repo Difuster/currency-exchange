@@ -31,7 +31,7 @@ const initialState = {
   ],
   symbols: allSymbols,
 };
-
+/* eslint-disable no-param-reassign */
 const exchangeSlice = createSlice({
   name: 'exchange',
   initialState,
@@ -52,7 +52,7 @@ const exchangeSlice = createSlice({
     }
   }
 });
-
+/* eslint-enable no-param-reassign */
 const selectAmount = (state) => state.exchange.amount;
 const selectFromCurrency = (state) => state.exchange.currency.from;
 const selectToCurrency = (state) => state.exchange.currency.to;

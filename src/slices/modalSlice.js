@@ -6,7 +6,7 @@ const initialState = {
     status: 'hidden',
   },
 };
-
+/* eslint-disable no-param-reassign */
 const modalSlice = createSlice({
   name: 'modal',
   initialState,
@@ -19,7 +19,7 @@ const modalSlice = createSlice({
     }
   }
 });
-
+/* eslint-enable no-param-reassign */
 const selectModalStatus = (state) => state.modal.modal.status;
 const selectModalType = (state) => state.modal.modal.type;
 
