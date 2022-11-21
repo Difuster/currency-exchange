@@ -77,7 +77,7 @@ function MainPage() {
 
     if(isNaN(amount) || amount <= 0) {
       console.log('error');
-      setErr('Ведите количество');
+      setErr(t('error'));
       return;
     }
     getRequest(state);
@@ -133,7 +133,7 @@ function MainPage() {
             {err ? <p style={{color:"red"}}><b>{err}</b></p> : null}
           </div>
           <div className="Main-arrowImg">
-            <img src={rightArrow} alt="Стрелка вправо" />
+            <img src={rightArrow} alt={t('rightArrow')} />
           </div>
           <div className="Main-formWrapper">
             <form onSubmit={handleExchange}>
@@ -172,7 +172,7 @@ function MainPage() {
               <input
                 type="submit"
                 className="Main-submit"
-                value="Пересчитать"
+                value={t('count')}
               />
             </form>
           </div>

@@ -4,9 +4,9 @@ import '../App.css';
 import './Header.css';
 
 function Header () {
-  const languages = ['RU', 'EN', 'DE'];
   const { i18n } = useTranslation();
   const { t } = useTranslation('translation', { keyPrefix: 'header' });
+  const languages = [t('languages.ru'), t('languages.en'), t('languages.de')];
 
   const handleCurrLanguage = (e) => {
     const lng = e.target.innerText.toLowerCase();

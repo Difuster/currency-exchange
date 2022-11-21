@@ -4,6 +4,13 @@
   list-style-type: none;
 }
 
+a:active,
+a:hover,
+a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+
 .Wrapper {
   margin: 0 auto;
 }
